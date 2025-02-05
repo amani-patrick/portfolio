@@ -213,7 +213,8 @@ export const socialHandles = [
   {
     name: "LinkedIn",
     icon: <CiLinkedin />,
-    link: "https://www.linkedin.com/in/shema-leandre-117317318/",
+    link: "https://www.linkedin.com/in/amani-patrick-15b2a6345",
+
   },
   {
     name: "Instagram",
