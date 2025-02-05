@@ -1,0 +1,105 @@
+#footer .newsletter{
+    padding: 70px 20px;
+    text-align: center;
+    background: var(--primary-glow);
+}
+
+#footer .newsletter .control__container{
+    display: flex;
+    align-items: stretch;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: var(--radius-2);
+    overflow: hidden;
+}
+
+#footer .newsletter .control{
+    flex: 1;
+    display: block;
+    padding: 15px;
+    background: var(--color-background-primary);
+    color: var(--color-text);
+    font-size: 15px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+#footer .newsletter .btn{
+    border-radius: 0px;
+    background: var(--gradient-2);
+    color: var(--color-white);
+}
+
+
+#footer .row{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+#footer .row .column{
+    width: 100%;
+}
+#footer .row .column:first-child{
+    flex: 1;
+}
+#footer .row .column:first-child .description{
+    margin: 20px 0;
+}
+
+#footer .routes__container{
+    list-style: none
+}
+
+#footer .group__name{
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+#footer .routes__container .route__item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-muted);
+    transition: var(--transition);
+    font-size: 15px;
+    margin: 10px 0;
+}
+#footer .routes__container .route__item:hover{
+    color: var(--color-text);
+}
+
+#footer .routes__container .route__item:hover .icon__container{
+    transform: scale(1.2);
+    color: var(--color-text);
+}
+
+#footer .copyright__container {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#footer .copyright__container h3{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+@media (max-width:900px){
+    #footer .row{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+
+@media (max-width:768px){
+    #footer .row{
+        grid-template-columns:100%;
+    }
+}

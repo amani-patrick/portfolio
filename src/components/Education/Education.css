@@ -1,0 +1,49 @@
+#education .education__container{
+    display: grid;
+    grid-template-columns: auto auto;
+    place-content: center;
+    gap: 20px;
+}
+
+#education .education__card{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+    padding: 30px;
+    transition: var(--transition);
+}
+
+#education .education__card:hover{
+    transform: scale(1.2);
+}
+
+#education .education__card .icon__container{
+    color: var(--color-primary);
+    font-size: 25px;
+    background: transparent;
+}
+
+#education .education__card:hover .icon__container{
+    transform: scale(1.2);
+}
+
+#education .education__card .certification{
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+#education .education__card .name{
+    font-size: 15px;
+}
+
+
+/* Make responsive */
+@media (max-width:768px){
+    #education .education__container{
+        grid-template-columns: 100%;
+    }
+    #education .education__card{
+        margin: 0px;
+    }
+}

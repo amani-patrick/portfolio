@@ -1,0 +1,5 @@
+.social__handles__container{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}

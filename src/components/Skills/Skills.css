@@ -1,0 +1,78 @@
+#skills{
+    background: var(--color-background-secondary);
+}
+
+#skills .skills__container{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+#skills .skill__box__container{
+    width: 100%;
+    padding: 30px 25px;
+    background: var(--color-background-primary);
+    border-radius: var(--radius-4);
+    border: solid 2px transparent;
+    transition: var(--transition);
+}
+
+#skills .skill__box__container:hover{
+    transform: scale(0.98);
+    border-color: var(--color-primary);
+}
+
+
+#skills .skill__box__container .category{
+    margin-bottom: 35px;
+}
+
+#skills .skill__box__container .box{
+    display: grid;
+    grid-template-columns:40px repeat(2,1fr) 40px;
+    gap: 10px;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+#skills .skill__box__container .box:hover{
+    color: var(--color-primary);
+}
+
+
+#skills .skill__box__container .box .icon__container{
+    color: var(--color-primary);
+}
+
+#skills .skill__box__container .box:hover .icon__container{
+    transform: scale(1.1);
+    color: var(--color-white);
+}
+#skills .skill__box__container .box:hover .icon__container::after{
+    width: 100%;
+    animation: fillBox 400ms linear;
+}
+
+
+
+#skills .skill__box__container .box .progress__container{
+    background: var(--color-background-variant);
+    height: 10px;
+    border-radius: var(--radius-4);
+    width: 100%;
+    overflow: hidden;
+}
+
+#skills .skill__box__container .box .progress__container .progress{
+    background: var(--gradient-1);
+    height: 10px;
+    border-radius: var(--radius-4);
+}
+
+/* Make it responsive */
+@media (max-width:768px){
+    #skills .skills__container{
+        flex-direction: column;
+    }
+}

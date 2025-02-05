@@ -1,0 +1,58 @@
+#clients .clients__container{
+    padding-bottom: 80px;
+    margin-top: 50px;
+}
+
+#clients .client__card{
+    display: flex;
+    gap: 10px;
+    border: solid 2px transparent;
+    background: var(--color-background-secondary);
+    border-radius: var(--radius-3);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+#clients .client__card:hover{
+    transform: scale(0.9);
+    border-color: var(--color-primary);
+}
+
+#clients .client__card .picture{
+    width: 150px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+#clients .client__card .primary__effect.picture::before{
+    background: linear-gradient(to bottom, transparent 0%, var(--color-primary) 85%);
+}
+
+#clients .client__card:hover .primary__effect.picture::before{
+    bottom: -100%;
+}
+
+
+#clients .client__card .details{
+    flex: 1;
+    padding: 10px;
+}
+
+
+#clients .client__card .name{
+    margin-bottom: 10px;
+}
+
+@media (max-width:899px){
+    #clients .client__card{
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    #clients .client__card .picture{
+        border-radius: var(--radius-5);
+    }
+    #clients .client__card .details{
+        text-align: center;
+    }
+}
