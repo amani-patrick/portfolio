@@ -11,8 +11,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === 'development' && require('vite-plugin-wasm')(),
   ].filter(Boolean),
   resolve: {
     alias: {
