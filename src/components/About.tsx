@@ -15,7 +15,7 @@ const About = () => {
             <div className="relative rounded-2xl overflow-hidden">
               <div className="aspect-ratio-1/1 w-full h-full relative">
                 <img
-                  src="https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80"
+                  src="/ee.jpg"
                   alt="AMANI Patrick"
                   className="object-cover w-full h-full rounded-2xl"
                 />

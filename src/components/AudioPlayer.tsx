@@ -1,9 +1,8 @@
-
 import { useState, useRef, useEffect } from "react";
 import { Volume2, VolumeX, Pause, Play } from "lucide-react";
 
 const AudioPlayer = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true); // Set to true for autoplay by default
   const [isMuted, setIsMuted] = useState(false);
   const [volume, setVolume] = useState(0.3);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -37,8 +36,11 @@ const AudioPlayer = () => {
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = volume;
+      if (isPlaying) {
+        audioRef.current.play();
+      }
     }
-  }, [volume]);
+  }, [volume, isPlaying]);
 
   return (
     <div className="audio-player-container">
@@ -50,11 +52,12 @@ const AudioPlayer = () => {
         >
           {isPlaying ? <Pause size={16} /> : <Play size={16} />}
         </button>
-        <span className="audio-title">Squid Game S2 Theme</span>
+        <span className="audio-title">Mingle</span>
         <audio
           ref={audioRef}
-          src="https://www.dropbox.com/scl/fi/2r6zv23toyjqyvvj2l1ek/squid-game-s2-theme.mp3?rlkey=a1lqbgr0zzrw0x1urzpf2i79s&dl=1"
+          src="/Mingle-Game-Song.mp3"
           loop
+          autoPlay // This makes the audio autoplay by default
         />
         
         <div className="hidden group-hover:flex items-center gap-2 ml-2">

@@ -40,7 +40,7 @@ const Hero = () => {
         </div>
         
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 hero-text">
-          <span>AMANI</span> <span>PATRICK</span>
+          <span>AMANI</span> <span>Patrick</span>
         </h1>
 
         <div className="h-14 mb-6">
