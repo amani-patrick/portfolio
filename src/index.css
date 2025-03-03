@@ -1,0 +1,255 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium 
+    hover:bg-primary/90 transition-colors flex items-center justify-center gap-2
+    shadow-lg hover:shadow-xl shadow-primary/20 hover:shadow-primary/30 transform 
+    hover:-translate-y-0.5 transition-all duration-300;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-white/20 dark:bg-white/10 backdrop-blur-sm 
+    border border-white/20 rounded-lg font-medium 
+    hover:bg-white/30 transition-colors flex items-center justify-center gap-2
+    shadow-lg hover:shadow-xl shadow-black/5 hover:shadow-black/10 transform 
+    hover:-translate-y-0.5 transition-all duration-300;
+}
+
+.btn-outline {
+  @apply px-6 py-3 bg-transparent border border-primary/50 text-primary 
+    rounded-lg font-medium hover:bg-primary/10 transition-colors 
+    flex items-center justify-center gap-2 shadow-sm hover:shadow-md 
+    shadow-primary/5 hover:shadow-primary/10 transform 
+    hover:-translate-y-0.5 transition-all duration-300;
+}
+
+.btn-icon {
+  @apply w-10 h-10 rounded-full flex items-center justify-center 
+    bg-white/70 dark:bg-black/70 backdrop-blur-md border border-white/20 dark:border-white/10 
+    text-primary hover:bg-primary/10 transition-colors 
+    shadow-md hover:shadow-lg shadow-black/5 dark:shadow-white/5 
+    transform hover:-translate-y-0.5 transition-all duration-300;
+}
+
+.glass-card {
+  @apply bg-white/70 dark:bg-black/70 backdrop-blur-md;
+  @apply border border-white/20 dark:border-white/10;
+  @apply shadow-lg;
+}
+
+.section-title {
+  @apply text-3xl font-bold mb-8 relative inline-block;
+}
+
+.section-title::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-1/2 h-1 bg-primary rounded-full;
+  transform: translateY(8px);
+}
+
+.animated-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animated-card:hover {
+  transform: translateY(-5px);
+  @apply shadow-xl;
+}
+
+.skill-icon {
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+  transform: scale(1.1);
+  @apply text-primary;
+}
+
+.stagger-animate > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-animate > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-animate > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-animate > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-animate > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-animate > *:nth-child(6) { animation-delay: 0.6s; }
+.stagger-animate > *:nth-child(7) { animation-delay: 0.7s; }
+.stagger-animate > *:nth-child(8) { animation-delay: 0.8s; }
+.stagger-animate > *:nth-child(9) { animation-delay: 0.9s; }
+.stagger-animate > *:nth-child(10) { animation-delay: 1s; }
+
+.hero-text span {
+  @apply inline-block;
+  animation: fade-in 0.8s cubic-bezier(0.11, 0, 0.5, 0) forwards;
+  opacity: 0;
+}
+
+.hero-text span:nth-child(1) { animation-delay: 0.1s; }
+.hero-text span:nth-child(2) { animation-delay: 0.2s; }
+.hero-text span:nth-child(3) { animation-delay: 0.3s; }
+.hero-text span:nth-child(4) { animation-delay: 0.4s; }
+.hero-text span:nth-child(5) { animation-delay: 0.5s; }
+
+.cursor-typing {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background-color: hsl(var(--primary));
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.audio-player-container {
+  @apply fixed bottom-5 right-5 z-50;
+}
+
+.audio-player {
+  @apply glass-card p-2 rounded-full flex items-center justify-center;
+  @apply w-10 h-10 text-primary;
+  transition: all 0.3s ease;
+}
+
+.audio-player:hover {
+  @apply w-auto pr-4;
+}
+
+.audio-player .audio-title {
+  @apply max-w-0 overflow-hidden whitespace-nowrap ml-0;
+  transition: all 0.3s ease;
+}
+
+.audio-player:hover .audio-title {
+  @apply max-w-[150px] ml-2;
+}
+
+.blur-load {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.blur-load::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation: pulse 2.5s infinite;
+  @apply bg-muted/50;
+}
+
+.blur-load.loaded::before {
+  @apply animate-fade-out;
+  animation-fill-mode: forwards;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.dark .animated-card:hover {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+}
+
+.project-card {
+  @apply transition-all duration-300;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+@media (max-width: 768px) {
+  .hero-text {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+}
