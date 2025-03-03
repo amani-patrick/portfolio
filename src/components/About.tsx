@@ -16,7 +16,7 @@ const About = () => {
               <div className="aspect-ratio-1/1 w-full h-full relative">
                 <img
                   src="https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80"
-                  alt="AMANI PATRICK"
+                  alt="AMANI Patrick"
                   className="object-cover w-full h-full rounded-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -24,10 +24,10 @@ const About = () => {
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <div className="flex flex-wrap gap-3">
                   <div className="glass-card px-4 py-2 rounded-full">
-                    <span className="text-sm font-medium">4+ Years Experience</span>
+                    <span className="text-sm font-medium">2+ Years Experience</span>
                   </div>
                   <div className="glass-card px-4 py-2 rounded-full">
-                    <span className="text-sm font-medium">15+ Projects</span>
+                    <span className="text-sm font-medium">7+ Projects</span>
                   </div>
                 </div>
               </div>
