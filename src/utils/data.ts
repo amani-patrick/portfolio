@@ -78,6 +78,13 @@ export const projects = [
     tags: ["JSP", "Servlets", "Java", "Html","Css","JavaScript"],
     image: "edusubmit.png",
     github: "https://github.com/amani-patrick/Assignment-MIS",
+  },
+  {
+    title: "SmartHome",
+    description: "An all in one functional web app to controll you home online without reaching there.",
+    tags: ["React","Node js","Tailwind","Typescript"],
+    image: "smartHome.png",
+    github: "https://github.com/amani-patrick/SmartHome",
   }
 ];
 
