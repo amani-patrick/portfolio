@@ -1,9 +1,5 @@
 
-import { 
-  GraduationCap, Code, ShieldCheck, BrainCircuit, 
-  Globe, Server, Database, FileCode, Lock, Eye, Scan, 
-  Bot, Terminal, Network, Activity, Cpu
-} from "lucide-react";
+import { Code, FileCode, Globe, Server, Terminal, Database, Cpu, Smartphone, Lock, Scan, Eye, ShieldCheck } from "lucide-react";
 
 export const navItems = [
   { name: "Home", href: "#home" },
@@ -16,61 +12,71 @@ export const navItems = [
 
 export const skills = [
   {
-    category: "Web Development",
+    category: "Frontend",
     items: [
-      { name: "HTML/CSS", icon: Code, level: 97 },
+      { name: "HTML/CSS", icon: Code, level: 95 },
       { name: "JavaScript", icon: FileCode, level: 95 },
-      { name: "React", icon: Globe, level: 90 },
-      { name: "Node.js", icon: Server, level: 95 },
+      { name: "React", icon: Globe, level: 92 },
+      { name: "TypeScript", icon: Code, level: 88 },
+    ],
+  },
+  {
+    category: "Backend",
+    items: [
+      { name: "Node.js", icon: Server, level: 93 },
+      { name: "API Design", icon: Terminal, level: 90 },
       { name: "Databases", icon: Database, level: 90 },
+      { name: "Deployment & Docker", icon: Cpu, level: 85 },
     ],
   },
   {
-    category: "Penetration Testing",
+    category: "Mobile",
     items: [
-      { name: "Network Security", icon: ShieldCheck, level: 85 },
-      { name: "Vulnerability Assessment", icon: Scan, level: 80 },
-      { name: "Ethical Hacking", icon: Lock, level: 75 },
-      { name: "Security Monitoring", icon: Eye, level: 70 },
-      {name:"Penetration testing",level:60}
+      { name: "React Native", icon: Smartphone, level: 88 },
     ],
   },
   {
-    category: "AI & Machine Learning",
+    category: "Cyber Security",
     items: [
-      { name: "Natural Language Processing", icon: BrainCircuit, level: 75 },
-      { name: "Machine Learning", icon: Bot, level: 70 },
-      { name: "Data Analysis", icon: Activity, level: 80 },
-      { name: "Neural Networks", icon: Network, level: 65 },
-      { name: "Computer Vision", icon: Cpu, level: 60 },
+      { name: "Penetration Testing", icon: Lock, level: 85 },
+      { name: "Vulnerability Assessment", icon: Scan, level: 82 },
+      { name: "Security Monitoring", icon: Eye, level: 78 },
+      { name: "Network Security", icon: ShieldCheck, level: 86 },
     ],
   },
 ];
 
 export const projects = [
   {
+    title: "ShopSmart",
+    description: "A simple, hosted full-stack Retail trading platform showcasing management of stock, management of suppliers and tracking debt purchases and sales. All made easy for shop owners",
+    tags: ["React", "Node.js", "Postgres"],
+    image: "image-s.png",
+    github: "https://github.com/amani-patrick/shopsmart",
+    demo: "https://shop-smart-smoky.vercel.app",
+    status: "Hosted",
+    featured: true,
+    order: 1,
+  },
+  {
     title: "An Trading bot",
     description: "A trading bot that uses algorithmic trading strategies to analyze market data and make informed trading decisions.",
-    tags: ["React", "Django", "Security", "JWT"],
-    image: "/amnii-trade.png",
+    tags: ["React", "Django", "Security", "JWT","TensorFlow"],
+    image: "amnii-trade.png",
     github: "https://github.com/amani-patrick/AMNII-BT-FRONTEND",
     demo: "https://amnii-bt-frontend.vercel.app",
+    status: "Hosted",
+    featured: false,
   },
   {
-    title: "AI Content Generator",
-    description: "An AI-powered tool that creates engaging content based on simple user prompts.",
-    tags: ["Python", "NLP", "Machine Learning", "API"],
-    image: "https://images.unsplash.com/photo-1677442135137-18bea0830f8d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    github: "https://github.com/amani-patrick/ai-content-gen",
-    demo: "https://ai-content-generator-demo.com",
-  },
-  {
-    title: "Vulnerability Scanner",
-    description: "A comprehensive tool to identify and categorize security vulnerabilities in web applications.",
-    tags: ["Python", "Security", "Penetration Testing"],
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    github: "https://github.com/amani-patrick/vuln-scanner",
-    demo: "https://vuln-scanner-demo.com",
+    title: "Team-Collab Backend",
+    description: "A backend system for team collaboration: REST API, authentication, RBAC, and worker queues. Frontend in progress.",
+    tags: ["Nestjs", "Postgres", "Prisma","RBAC"],
+    image: "image-t.png",
+    github: "https://github.com/amani-patrick/team-collab-backend",
+    docs: "https://github.com/amani-patrick/team-collab-backend#readme",
+    status: "Backend only",
+    featured: false,
   },
   {
     title: "EduSubmit",
@@ -78,13 +84,17 @@ export const projects = [
     tags: ["JSP", "Servlets", "Java", "Html","Css","JavaScript"],
     image: "edusubmit.png",
     github: "https://github.com/amani-patrick/Assignment-MIS",
+    status: "Not Hosted-fullstack",
+    featured: false,
   },
   {
     title: "SmartHome",
     description: "An all in one functional web app to controll you home online without reaching there.",
-    tags: ["React","Node js","Tailwind","Typescript"],
-    image: "smartHome.png",
+    tags: ["React","Tailwind","Typescript"],
+    image: "SmartHome.png",
     github: "https://github.com/amani-patrick/SmartHome",
+    status: "Not Hosted-frontend",
+    featured: false,
   }
 ];
 
@@ -127,15 +137,20 @@ export const certificates = [
 
 export const education = [
   {
-    degree: "Master of Computer Science",
-    institution: "Stanford University",
-    year: "2020-2022",
-    description: "Specialized in Cybersecurity and Artificial Intelligence"
-  },
-  {
-    degree: "Bachelor of Technology",
-    institution: "MIT",
-    year: "2016-2020",
-    description: "Computer Science and Engineering"
+    degree: "Advanced Secondary Education (Software Engineering)",
+    institution: "Rwanda Coding Academy (RCA)",
+    year: "Final Year",
+    description:
+      "Specialized program with an intensive focus on software engineering and embedded systems. Coursework includes system design, backend development, networking, cybersecurity fundamentals, low-level programming, and hardware–software integration, with a strong emphasis on practical, project-based learning."
   }
 ];
+
+export const teamCollabSVG = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 48" role="img" aria-labelledby="teamTitle teamDesc">
+  <title id="teamTitle">Team collab</title>
+  <desc id="teamDesc">Text-only SVG reading Team collab</desc>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="#0F172A">Team collab</text>
+</svg>
+`;
+
+

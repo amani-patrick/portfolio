@@ -39,14 +39,16 @@ const About = () => {
               I'm a passionate technologist focused on creating secure, intelligent solutions
             </h3>
             <p className="text-muted-foreground mb-6">
-              Based in Kigali, Rwanda, I bring expertise spanning web development, cybersecurity, and artificial intelligence
-              to every project. My approach combines creative problem-solving with a deep commitment to security and performance.
+              Based in Kigali, Rwanda, I design and build software systems across web development, cybersecurity,
+              and artificial intelligence, with an emphasis on scalability, security, and long-term maintainability.
+              I approach problems at a system level, paying close attention to architecture, data flow, and
+              operational concerns from the start.
             </p>
             <p className="text-muted-foreground mb-8">
-              I'm constantly exploring the latest technologies and methodologies, driven by a 
-              curiosity to understand how things work and how they can be improved. Whether it's 
-              building intuitive web interfaces, conducting thorough security assessments, or 
-              implementing AI solutions, I strive for excellence in everything I do.
+              I evaluate technologies and methodologies through a practical lens, focusing on trade-offs rather
+              than trends. My work ranges from shaping application architecture and defining access boundaries,
+              to reviewing security posture and integrating AI where it adds real value. I value clarity,
+              simplicity, and deliberate engineering decisions that hold up as systems grow.
             </p>
 
             <div className="space-y-6">

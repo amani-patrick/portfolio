@@ -13,22 +13,24 @@ const Skills = () => {
           <h2 className="section-title">My Skills</h2>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-16">
-          {skills.map((skillCategory) => (
-            <button
-              key={skillCategory.category}
-              className={cn(
-                "px-6 py-3 rounded-full transition-all duration-300",
-                activeCategory === skillCategory.category
-                  ? "bg-primary text-white shadow-lg"
-                  : "glass-card hover:bg-white/30"
-              )}
-              onClick={() => setActiveCategory(skillCategory.category)}
-            >
-              {skillCategory.category}
-            </button>
-          ))}
-        </div>
+        <div className="grid gap-4 mb-16
+                [grid-template-columns:repeat(auto-fit,minmax(160px,1fr))]">
+  {skills.map((skillCategory) => (
+    <button
+      key={skillCategory.category}
+      className={cn(
+        "px-6 py-3 rounded-full transition-all duration-300 text-center whitespace-nowrap",
+        activeCategory === skillCategory.category
+          ? "bg-primary text-white shadow-lg"
+          : "glass-card hover:bg-white/30"
+      )}
+      onClick={() => setActiveCategory(skillCategory.category)}
+    >
+      {skillCategory.category}
+    </button>
+  ))}
+</div>
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-animate">
           {skills

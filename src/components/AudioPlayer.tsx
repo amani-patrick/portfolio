@@ -57,7 +57,7 @@ const AudioPlayer = () => {
           ref={audioRef}
           src="/Mingle-Game-Song.mp3"
           loop
-          autoPlay // This makes the audio autoplay by default
+          autoPlay 
         />
         
         <div className="hidden group-hover:flex items-center gap-2 ml-2">

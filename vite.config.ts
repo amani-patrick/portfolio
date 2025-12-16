@@ -14,7 +14,7 @@ export default defineConfig(async ({ mode }) => {
   return {
     server: {
       host: "::",
-      port: 8080,
+      port: 8880,
     },
     plugins,
     resolve: {
