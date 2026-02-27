@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Save, Eye, X, Plus, Tag, Calendar, Clock, Image as ImageIcon } from "lucide-react";
+import { Save, Eye, X, Plus, Tag, Calendar, Clock, Image as ImageIcon, Download } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { exportBlogsToJSON } from "@/utils/blogExporter";
 
 const BlogAdmin = () => {
     const navigate = useNavigate();
@@ -74,6 +75,14 @@ const BlogAdmin = () => {
                 <div className="flex items-center justify-between mb-8">
                     <h1 className="text-3xl font-bold">Write New Blog Post</h1>
                     <div className="flex gap-3">
+                        <button
+                            onClick={exportBlogsToJSON}
+                            className="flex items-center gap-2 px-4 py-2 bg-green-600/20 hover:bg-green-600/30 text-green-400 rounded-xl transition-colors"
+                            title="Export all blogs to JSON file"
+                        >
+                            <Download className="h-4 w-4" />
+                            Export
+                        </button>
                         <button
                             onClick={() => setPreviewMode(!previewMode)}
                             className="flex items-center gap-2 px-4 py-2 bg-secondary/50 hover:bg-secondary rounded-xl transition-colors"
