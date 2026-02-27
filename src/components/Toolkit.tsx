@@ -3,7 +3,7 @@ import React from 'react';
 const skills = [
     "React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Figma",
     "React Native", "Supabase", "PostgreSQL", "Python", "Spring Boot", "Java", "NestJS", "MongoDB",
-    "FastApi", "Docker", "Git", "Github"
+    "FastApi", "Docker", "Git", "Github","MQL5/MQL4"
 ];
 
 export const Toolkit = () => {

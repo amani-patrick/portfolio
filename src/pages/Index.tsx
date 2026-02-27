@@ -11,10 +11,10 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const allProjects = [
   {
-    name: "SmartSheet AI",
-    desc: "AI-powered spreadsheet automation tailored to your needs — natural language processing for complex formulas and data analysis.",
+    name: "Email Service",
+    desc: "A custom Email service where you can send and receive emails securely through the cryptographich signings and you can do it anonymously,This project is for Finacial Sector, Anonymous Email Service, Sharing sensitive info and even on our side it shows nothing",
     category: "Web Apps",
-    tags: ["React", "AI", "Node.js"],
+    tags: ["React", "Cryptography", "FastAPI", "SQLite", "JWT"],
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=60"
   },
   {
@@ -32,11 +32,11 @@ const allProjects = [
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&auto=format&fit=crop&q=60"
   },
   {
-    name: "VulnScanner Pro",
-    desc: "Automated web application vulnerability scanner for identifying common security flaws like XSS and SQLi.",
+    name: "File Upload Vulnerability Scanner",
+    desc: "In this Era of vibecoding, Often LLMs mimick or simplify upload service for fast delivery, This tools helps check you upload endpoints and attempts to exploit them",
     category: "Cyber Security",
-    tags: ["Security", "Python", "Pentesting"],
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=60"
+    tags: ["Security", "Python", "Pentesting","Docker"],
+    image: "vibecheck.png"
   },
   {
     name: "EduSumit Mobile",
@@ -84,10 +84,10 @@ const allEas = [
 ];
 
 const certifications = [
-  "CompTIA Security+",
-  "eJPT (eLearnSecurity Junior Penetration Tester)",
-  "Junior Penetration Tester (TryHackMe)",
-  "Foundations of Cyber Security"
+  "Network Researcher(Think Cyber)",
+  "Penetration Tester(Think Cyber)",
+  "Python Developer(Think Cyber)",
+  "Intro to linux (Think Cyber)"
 ];
 
 const Index = () => {
@@ -154,7 +154,7 @@ const Index = () => {
 
             <div className="flex flex-wrap items-center justify-center gap-3 mb-8 text-muted-foreground">
               <span className="text-sm md:text-base font-medium px-4 py-1.5 rounded-full bg-secondary/50 border border-border/30 text-foreground/80">
-                Developer & Forex EA Developer
+                Developer & Bounty Hunter
               </span>
               <span className="text-xs uppercase tracking-widest font-bold opacity-30">•</span>
               <span className="text-sm md:text-base font-medium">
@@ -165,7 +165,7 @@ const Index = () => {
             <p className="text-muted-foreground/90 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
               Building <span className="text-foreground font-semibold">high-performance trading systems</span> and
               <span className="text-foreground font-semibold"> secure web architectures</span>.
-              Specialized in quantitative algorithms and professional penetration testing.
+              Specialized in Scalable Backend development and professional penetration testing, Bug bounty hunting and Developing Forex Expert Advisors.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
@@ -223,7 +223,7 @@ const Index = () => {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-2">Projects</h2>
-                <p className="text-muted-foreground text-sm">A collection of things I've built and designed.</p>
+                <p className="text-muted-foreground text-sm">A collection of things I've designed and built.</p>
               </div>
               <div className="relative w-full md:w-64">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
