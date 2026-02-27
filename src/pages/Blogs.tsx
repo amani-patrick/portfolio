@@ -1,39 +1,34 @@
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
-
-const blogPosts = [
+import { useState,useEffect } from "react";
+const defaultBlogs = [
     {
-        id: "future-of-trading",
-        title: "The Future of Algorithmic Trading",
-        date: "Feb 24, 2024",
-        excerpt: "Exploring the integration of machine learning and quantitative analysis in modern forex markets.",
-        tags: ["Trading", "AI"],
+        id: "betting-addiction-to-ethical-hacking",
+        title: "From Betting Addiction to Ethical Hacking: How I Discovered a Security Loophole in a Popular Betting Platform",
+        date: "Apr 17, 2025",
+        excerpt: "For a long time, I was addicted to betting. It started as something small, but it consumed more of my time — and money — than I'd like to admit. Ironically, it was this obsession that helped me uncover serious flaws in how some betting platforms handle user authentication.",
+        tags: ["Cyber Security", "Ethical Hacking", "Bug Bounty"],
+        readTime: "3 min read"
     },
     {
-        id: "securing-web-apps",
-        title: "Securing Modern Web Applications",
-        date: "Jan 15, 2024",
-        excerpt: "A comprehensive guide to identifying and mitigating common vulnerabilities in React and Node.js environments.",
-        tags: ["Cyber Security", "SecDevOps"],
-    },
-    {
-        id: "building-scalable-systems",
-        title: "Building Scalable Inventory Systems",
-        date: "Dec 10, 2023",
-        excerpt: "Architectural patterns and database optimizations for managing high-volume warehouse data.",
-        tags: ["Architecture", "Backend"],
-    },
-    {
-        id: "my-journey-pentesting",
-        title: "My Journey into Pentesting",
-        date: "Nov 05, 2023",
-        excerpt: "How I transitioned from development into aggressive security research and auditing.",
-        tags: ["Security", "Career"],
+        id: "hft-pro-us30",
+        title: "Building a High-Frequency Trading Bot for US30: My Journey to 94% Win Rate",
+        date: "February 27, 2026",
+        excerpt: "A deep dive into building HFT Pro, a high-frequency trading Expert Advisor for US30 that achieved a 94.26% win rate with a 35.75 profit factor during February 2026 backtesting. Learn the strategy, risk management, and technology behind it.",
+        tags: ["HFT", "US30", "Algorithmic Trading", "MQL5", "Forex"],
+        readTime: "8 min read"
     }
 ];
 
+
 const Blogs = () => {
+    const [blogPosts, setBlogPosts] = useState([]);
+    useEffect(() => {
+    const savedPosts = JSON.parse(localStorage.getItem('blogPosts') || '{}');
+    const postsArray = Object.values(savedPosts);
+    setBlogPosts(postsArray.length ? postsArray : defaultBlogs);
+}, []);
     return (
         <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
             <div className="mx-auto max-w-2xl px-6 py-20 md:py-32">
@@ -60,6 +55,8 @@ const Blogs = () => {
                                 <div className="flex items-center gap-3 text-xs font-medium text-muted-foreground uppercase tracking-widest">
                                     <span>{post.date}</span>
                                     <span className="text-muted-foreground/30">•</span>
+                                    <span>{post.readTime}</span>
+                                    <span className="text-muted-foreground/30">•</span>
                                     <div className="flex gap-2">
                                         {post.tags.map(tag => (
                                             <Badge key={tag} variant="secondary" className="px-2 py-0 text-[10px] bg-secondary/50 font-normal">
@@ -76,7 +73,7 @@ const Blogs = () => {
                                     {post.excerpt}
                                 </p>
                                 <div className="mt-2 text-sm font-medium border-b border-transparent group-hover:border-primary w-fit transition-all text-primary">
-                                    Read article
+                                    Read article  →
                                 </div>
                             </div>
                         </Link>

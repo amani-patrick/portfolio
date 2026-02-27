@@ -175,10 +175,8 @@ const Index = () => {
             </div>
 
             <p className="text-muted-foreground/90 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
-              Building <span className="text-foreground font-semibold">high-performance trading systems</span> and
-              <span className="text-foreground font-semibold"> secure web architectures</span>.
-              Specialized in Scalable Backend development and professional penetration testing, Bug bounty hunting and Developing Forex Expert Advisors.
-            </p>
+  {new Date().getFullYear() - 2008} y/o Building <span className="text-foreground font-semibold">high-performance trading systems</span> and <span className="text-foreground font-semibold">secure web architectures</span>. Currently Building at <a href="https://echo-solution.com" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Echo Solution</a>
+</p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
