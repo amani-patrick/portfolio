@@ -89,7 +89,7 @@ const allEas = [
       lastTested: "Mar 2024",
       testedPeriod: "1.5 Years"
     },
-    image: "https://images.unsplash.com/photo-1518186239751-f717f1efd8a8?w=800&auto=format&fit=crop&q=60",
+    image: "https://images.unsplash.com/photo-1640340434855-6084b1f4901c?w=800&auto=format&fit=crop&q=60",
     isLive: false,
     details: "A momentum-centric trend following strategy designed to capture large swings in the Forex market. It filters out market noise using custom volatility indicators, ensuring that entries are only triggered during confirmed trend accelerations. The strategy is built for longevity, focusing on steady equity growth across 1.5+ years of verified performance history."
   },
