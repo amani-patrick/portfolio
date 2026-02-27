@@ -4,32 +4,32 @@ import { Badge } from "@/components/ui/badge";
 
 const blogPosts = [
     {
+        id: "future-of-trading",
         title: "The Future of Algorithmic Trading",
         date: "Feb 24, 2024",
         excerpt: "Exploring the integration of machine learning and quantitative analysis in modern forex markets.",
         tags: ["Trading", "AI"],
-        link: "#"
     },
     {
+        id: "securing-web-apps",
         title: "Securing Modern Web Applications",
         date: "Jan 15, 2024",
         excerpt: "A comprehensive guide to identifying and mitigating common vulnerabilities in React and Node.js environments.",
         tags: ["Cyber Security", "SecDevOps"],
-        link: "#"
     },
     {
+        id: "building-scalable-systems",
         title: "Building Scalable Inventory Systems",
         date: "Dec 10, 2023",
         excerpt: "Architectural patterns and database optimizations for managing high-volume warehouse data.",
         tags: ["Architecture", "Backend"],
-        link: "#"
     },
     {
+        id: "my-journey-pentesting",
         title: "My Journey into Pentesting",
         date: "Nov 05, 2023",
         excerpt: "How I transitioned from development into aggressive security research and auditing.",
         tags: ["Security", "Career"],
-        link: "#"
     }
 ];
 
@@ -39,9 +39,9 @@ const Blogs = () => {
             <div className="mx-auto max-w-2xl px-6 py-20 md:py-32">
                 <Link
                     to="/"
-                    className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-12 transition-colors"
+                    className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-12 transition-colors group"
                 >
-                    <ArrowLeft className="h-4 w-4" />
+                    <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
                     Back to Portfolio
                 </Link>
 
@@ -55,7 +55,7 @@ const Blogs = () => {
 
                 <div className="space-y-16">
                     {blogPosts.map((post) => (
-                        <article key={post.title} className="group cursor-pointer">
+                        <Link key={post.id} to={`/blogs/${post.id}`} className="block group cursor-pointer">
                             <div className="flex flex-col gap-3">
                                 <div className="flex items-center gap-3 text-xs font-medium text-muted-foreground uppercase tracking-widest">
                                     <span>{post.date}</span>
@@ -79,7 +79,7 @@ const Blogs = () => {
                                     Read article
                                 </div>
                             </div>
-                        </article>
+                        </Link>
                     ))}
                 </div>
 

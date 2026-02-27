@@ -118,47 +118,86 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <div className="mx-auto max-w-4xl px-6 py-20 md:py-32">
 
-        {/* Hero */}
-        <section className="mb-24">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
-            <div>
-              <h1 className="md:text-3xl font-semibold tracking-tight mb-3 p-3">Amani Patrick</h1>
-              <p className="text-lg md:text-xl text-foreground font-medium flex flex-wrap items-center gap-2">
-                Developer & Forex EA Developer
-                <span className="text-muted-foreground font-normal text-sm md:text-base">• {new Date().getFullYear()-2022}+ years experience</span>
-              </p>
+        {/* Hero Section */}
+        <section className="mb-24 flex flex-col items-center text-center">
+          <div className="relative mb-10 group">
+            {/* Animated Glow Effect */}
+            <div className="absolute -inset-1.5 bg-gradient-to-r from-primary/40 via-primary/10 to-primary/40 rounded-full blur-xl opacity-20 group-hover:opacity-40 transition-all duration-700 animate-pulse"></div>
+
+            <div className="relative h-32 w-32 md:h-44 md:w-44 rounded-full p-1 bg-gradient-to-b from-border/50 to-transparent">
+              <div className="h-full w-full rounded-full overflow-hidden border-2 border-background bg-secondary/30 backdrop-blur-sm">
+                <img
+                  src="/ee.jpg"
+                  alt="Amani Patrick"
+                  className="h-full w-full object-cover grayscale-[0.1] hover:grayscale-0 transition-all duration-700 scale-110 hover:scale-100"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = 'https://api.dicebear.com/7.x/avataaars/svg?seed=Amani';
+                  }}
+                />
+              </div>
             </div>
-            <div className="flex items-center gap-4">
-              <Link
-                to="/blogs"
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-all text-sm font-medium mr-2"
-              >
-                <BookOpen className="h-4 w-4" />
-                Blogs
-              </Link>
-              <a
-                href="https://github.com/amani-patrick"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-secondary hover:bg-secondary/80 text-muted-foreground hover:text-foreground transition-all"
-                aria-label="GitHub"
-              >
-                <Github className="h-4 w-4" />
-              </a>
-              <a
-                href="mailto:pazzoamani@gmail.com"
-                className="p-2.5 rounded-full bg-secondary hover:bg-secondary/80 text-muted-foreground hover:text-foreground transition-all"
-                aria-label="Email"
-              >
-                <Mail className="h-4 w-4" />
-              </a>
+
+            {/* Floating Badge */}
+            <div className="absolute -bottom-2 -right-2 bg-background border border-border/50 px-3 py-1 rounded-full shadow-lg flex items-center gap-1.5">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="text-[10px] font-bold tracking-wider uppercase text-muted-foreground">Available</span>
             </div>
           </div>
-          <p className="text-muted-foreground/90 text-base md:text-lg leading-relaxed max-w-2xl">
-            Full-stack developer passionate about building scalable applications and automated trading solutions.
-            Specialized in backend development, inventory systems, and quantitative trading algorithms.
-            Proficient in <span className="text-foreground">Cyber Security</span>, especially <span className="text-foreground">Web App Pentesting</span>.
-          </p>
+
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-b from-foreground to-foreground/50 bg-clip-text text-transparent leading-[1.1]">
+              Amani Patrick
+            </h1>
+
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-8 text-muted-foreground">
+              <span className="text-sm md:text-base font-medium px-4 py-1.5 rounded-full bg-secondary/50 border border-border/30 text-foreground/80">
+                Developer & Forex EA Developer
+              </span>
+              <span className="text-xs uppercase tracking-widest font-bold opacity-30">•</span>
+              <span className="text-sm md:text-base font-medium">
+                {new Date().getFullYear() - 2022}+ Years Experience
+              </span>
+            </div>
+
+            <p className="text-muted-foreground/90 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+              Building <span className="text-foreground font-semibold">high-performance trading systems</span> and
+              <span className="text-foreground font-semibold"> secure web architectures</span>.
+              Specialized in quantitative algorithms and professional penetration testing.
+            </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link
+                to="/blogs"
+                className="group relative inline-flex items-center gap-2 px-8 py-3 rounded-full bg-foreground text-background font-semibold transition-all hover:scale-105 active:scale-95 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <BookOpen className="h-4 w-4 relative z-10" />
+                <span className="relative z-10">Read My Articles</span>
+              </Link>
+
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://github.com/amani-patrick"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-full bg-secondary hover:bg-secondary/80 text-foreground transition-all border border-border/40 hover:-translate-y-1"
+                  aria-label="GitHub"
+                >
+                  <Github className="h-5 w-5" />
+                </a>
+                <a
+                  href="mailto:pazzoamani@gmail.com"
+                  className="p-3 rounded-full bg-secondary hover:bg-secondary/80 text-foreground transition-all border border-border/40 hover:-translate-y-1"
+                  aria-label="Email"
+                >
+                  <Mail className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Toolkit */}
@@ -270,14 +309,14 @@ const Index = () => {
                 <h3 className="text-xl font-bold group-hover:text-primary transition-colors">Full-stack Developer</h3>
                 <p className="text-muted-foreground">Software Engineering & Freelance</p>
               </div>
-              <span className="text-muted-foreground text-sm mt-1 md:mt-0">2021 — Present (3+ years)</span>
+              <span className="text-muted-foreground text-sm mt-1 md:mt-0">2021 — Present ({new Date().getFullYear() - 2021}+ years)</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-center justify-between py-6 border-b border-border/50 group">
               <div>
                 <h3 className="text-xl font-bold group-hover:text-primary transition-colors">Forex EA Developer</h3>
                 <p className="text-muted-foreground">MQL4/MQL5 Strategy Implementation</p>
               </div>
-              <span className="text-muted-foreground text-sm mt-1 md:mt-0">2019 — Present (5+ years)</span>
+              <span className="text-muted-foreground text-sm mt-1 md:mt-0">2019 — Present ({new Date().getFullYear() - 2019}+ years)</span>
             </div>
           </div>
         </section>
