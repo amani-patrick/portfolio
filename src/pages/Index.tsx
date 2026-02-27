@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { Github, Mail, Search, ChevronRight, BookOpen } from "lucide-react";
+import { Github, Mail, Search, ChevronRight, BookOpen, ChevronLeft } from "lucide-react";
 import { Toolkit } from "@/components/Toolkit";
 import { ProjectCard } from "@/components/ProjectCard";
 import { EACard } from "@/components/EACard";
@@ -14,50 +14,58 @@ const allProjects = [
     name: "Email Service",
     desc: "A custom Email service where you can send and receive emails securely through the cryptographich signings and you can do it anonymously,This project is for Finacial Sector, Anonymous Email Service, Sharing sensitive info and even on our side it shows nothing",
     category: "Web Apps",
-    tags: ["React", "Cryptography", "FastAPI", "SQLite", "JWT"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=60"
+    tags: ["React", "Cryptography", "FastAPI", "SQLite", "JWT","rsa"],
+    image: "SES.png",
+    details: "A privacy-first communication platform utilizing end-to-end encryption and cryptographic signings to ensure message integrity. Built for the financial sector where anonymity and security are paramount, the system ensures that even at the database level, sensitive information remains inaccessible to unauthorized parties. It leverages JWT for secure sessions and SQLite for lightweight, encrypted data storage."
   },
   {
-    name: "Prompt AI",
-    desc: "This is a web app which enhances user prompt through using gpt 4 you can ask it anything and it will optimize it.",
+    name: "ShopSmart",
+    desc: "This is a website is for helping retail traders and shop owners to manage their daily sales and expenses and also track Debts and Credits and most importantly it helps them to track their profit and loss.",
     category: "Web Apps",
-    tags: ["Next.js", "GPT-4", "TypeScript"],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop&q=60"
+    tags: ["React", "Java", "Spring Boot", "TypeScript", "PostgreSQL"],
+    image: "ShopSmart.png",
+    details: "A comprehensive inventory and finance management tool designed specifically for small to medium retail businesses. It streamlines the tracking of daily sales, expenses, and credit/debt cycles, providing shop owners with real-time profit and loss visualizations. The backend, built with Spring Boot and PostgreSQL, ensures data consistency and high availability for critical business operations."
   },
   {
-    name: "NeuroLab Web",
-    desc: "Web application for NeuroLab project which is mental health ai powered doctor that helps people with issues.",
+    name: "MCP Hub",
+    desc: "A custom collection of my own custom made MCP servers that can be used to enhance the productivity of your AI Agents as a Serious Developer",
     category: "Web Apps",
     tags: ["React", "HealthTech", "AI"],
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&auto=format&fit=crop&q=60"
+    image: "mcp.png",
+    details: "A centralized repository of specialized Model Context Protocol (MCP) servers tailored for modern AI agent development. This collection enables developers to extend their LLM capabilities with tools for local filesystem access, database interaction, and custom API integrations. It focuses on reducing friction in the 'vibecoding' era by providing robust, well-documented building blocks for intelligent agents."
   },
   {
     name: "File Upload Vulnerability Scanner",
     desc: "In this Era of vibecoding, Often LLMs mimick or simplify upload service for fast delivery, This tools helps check you upload endpoints and attempts to exploit them",
     category: "Cyber Security",
-    tags: ["Security", "Python", "Pentesting","Docker"],
-    image: "vibecheck.png"
+    tags: ["Security", "Python", "Pentesting", "Docker"],
+    image: "vibecheck.png",
+    details: "A specialized cybersecurity tool designed to identify and exploit common misconfigurations in web upload endpoints. In an era of rapid development, security gaps often emerge in simplified upload services; this tool automates the process of testing for vulnerability to malicious file execution. Built with Python and containerized with Docker, it serves as a critical asset for penetration testers and researchers."
   },
   {
     name: "EduSumit Mobile",
     desc: "Native mobile application for the EduSumit educational platform.",
     category: "Mobile",
     tags: ["React Native", "Firebase"],
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format&fit=crop&q=60",
+    details: "A native mobile experience for the EduSumit educational ecosystem, providing students with seamless access to course materials and real-time collaboration tools. Utilizing React Native for cross-platform efficiency and Firebase for real-time data syncing and authentication, the app delivers a responsive and reliable learning environment tailored for mobile users."
   },
 ];
 
 const allEas = [
   {
-    name: "HFT_EA Pro",
+    name: "HFT_pro",
     desc: "High-frequency trading Expert Advisor optimized for low latency execution and scalp setups.",
     metrics: {
-      profitFactor: "1.85",
-      recoveryFactor: "4.2",
-      lastTested: "Feb 2024",
-      testedPeriod: "2 Years"
+      profitFactor: "35.75",
+      recoveryFactor: "1879.34",
+      lastTested: "Feb 2026",
+      testedPeriod: "1 month",
+      winrate:"94.13%"
     },
-    image: "https://images.unsplash.com/photo-1611974717483-36009a30931d?w=800&auto=format&fit=crop&q=60"
+    image: "HFT_pro.png",
+    isLive: true,
+    details: "A professional-grade high-frequency trading algorithm meticulously engineered for low-latency execution on major currency pairs. It utilizes a sophisticated scalp setup logic that capitalizes on michrough dynamic stop-loss adjustments. Optimized for ECN environments, it minimizes slippage and maximizes execution speed."
   },
   {
     name: "Gold Beast V4",
@@ -68,7 +76,9 @@ const allEas = [
       lastTested: "Jan 2024",
       testedPeriod: "4 Years"
     },
-    image: "https://images.unsplash.com/photo-1640340434855-6084b1f4901c?w=800&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1640340434855-6084b1f4901c?w=800&auto=format&fit=crop&q=60",
+    isLive: false,
+    details: "A flagship trading system specializing in XAUUSD (Gold) markets, employing a multi-timeframe analysis engine to identify high-probability trend reversals. By integrating dynamic risk management and volatility-adjusted position sizing, the algorithm maintains a high recovery factor even during erratic market phases. It is the result of four years of iterative backtesting and live optimization."
   },
   {
     name: "The Flipper",
@@ -79,7 +89,9 @@ const allEas = [
       lastTested: "Mar 2024",
       testedPeriod: "1.5 Years"
     },
-    image: "https://images.unsplash.com/photo-1518186239751-f717f1efd8a8?w=800&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1518186239751-f717f1efd8a8?w=800&auto=format&fit=crop&q=60",
+    isLive: false,
+    details: "A momentum-centric trend following strategy designed to capture large swings in the Forex market. It filters out market noise using custom volatility indicators, ensuring that entries are only triggered during confirmed trend accelerations. The strategy is built for longevity, focusing on steady equity growth across 1.5+ years of verified performance history."
   },
 ];
 
@@ -270,6 +282,21 @@ const Index = () => {
               </Button>
             </div>
           )}
+          {visibleProjects >= filteredProjects.length && (
+            <div className="mt-12 flex flex-col items-center gap-4">
+              <p className="text-muted-foreground text-sm italic">That's it for now!</p>
+              <a
+                href="https://github.com/amani-patrick"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-secondary/50 border border-border/50 text-foreground/80 hover:text-foreground hover:bg-secondary transition-all hover:-translate-y-0.5"
+              >
+                <Github className="h-4 w-4" />
+                <span className="text-sm font-medium">Explore more on GitHub</span>
+                <ChevronRight className="h-4 w-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+              </a>
+            </div>
+          )}
         </section>
 
         {/* Expert Advisors Section */}
@@ -309,14 +336,21 @@ const Index = () => {
                 <h3 className="text-xl font-bold group-hover:text-primary transition-colors">Full-stack Developer</h3>
                 <p className="text-muted-foreground">Software Engineering & Freelance</p>
               </div>
-              <span className="text-muted-foreground text-sm mt-1 md:mt-0">2021 — Present ({new Date().getFullYear() - 2021}+ years)</span>
+              <span className="text-muted-foreground text-sm mt-1 md:mt-0">2021 — Present ({new Date().getFullYear() - 2022}+ years)</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-center justify-between py-6 border-b border-border/50 group">
               <div>
                 <h3 className="text-xl font-bold group-hover:text-primary transition-colors">Forex EA Developer</h3>
                 <p className="text-muted-foreground">MQL4/MQL5 Strategy Implementation</p>
               </div>
-              <span className="text-muted-foreground text-sm mt-1 md:mt-0">2019 — Present ({new Date().getFullYear() - 2019}+ years)</span>
+              <span className="text-muted-foreground text-sm mt-1 md:mt-0">2023 — Present ({new Date().getFullYear() - 2024}+ years)</span>
+            </div>
+            <div className="flex flex-col md:flex-row md:items-center justify-between py-6 border-b border-border/50 group">
+              <div>
+                <h3 className="text-xl font-bold group-hover:text-primary transition-colors">Bug bounty Hunter</h3>
+                <p className="text-muted-foreground">Vulnerability Assessment and Penetration Testing Specialist </p>
+              </div>
+              <span className="text-muted-foreground text-sm mt-1 md:mt-0">2024 — Present ({new Date().getFullYear() - 2025}+ years)</span>
             </div>
           </div>
         </section>
