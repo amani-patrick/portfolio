@@ -11,6 +11,14 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const allProjects = [
   {
+    name: "TalentIQ",
+    desc: "AI-Powered Talent Screening platform. Evaluates candidates with transparent AI scoring, auditable rankings, and human-centered review workflows.",
+    category: "Web Apps",
+    tags: ["React", "TypeScript", "Node.js", "Gemini AI"],
+    image: "TalentIQ.png",
+    details: "A comprehensive AI-powered applicant tracking system that integrates seamlessly with Gemini AI to screen and rank candidates based on job descriptions. It features transparent AI scoring, auditable rankings, and detailed quality metrics to streamline the hiring pipeline while maintaining human oversight."
+  },
+  {
     name: "Email Service",
     desc: "A custom Email service where you can send and receive emails securely through the cryptographich signings and you can do it anonymously,This project is for Finacial Sector, Anonymous Email Service, Sharing sensitive info and even on our side it shows nothing",
     category: "Web Apps",
