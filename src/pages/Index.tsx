@@ -11,6 +11,30 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const allProjects = [
   {
+    name: "Amnii Market",
+    desc: "Rwanda's digital housing marketplace — browse listings, connect with agents, and manage properties with no hidden paywalls.",
+    category: "Web Apps",
+    tags: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
+    image: "Amnii-mrkt.png",
+    details: "A housing platform for Rwanda's rental and sales market. Seekers search and save listings; agents and owners run dedicated portals for inquiries and analytics; admins handle verification, pricing, and reports. Built with Next.js App Router, Supabase, and next-intl for localized discovery."
+  },
+  {
+    name: "MindMingle",
+    desc: "Mobile app for emotional fitness with money — track spending moods, set goals, and build healthier financial habits.",
+    category: "Mobile",
+    tags: ["Expo", "React Native", "Firebase", "TypeScript"],
+    image: "MindMingle3.png",
+    details: "A mood-aware finance app with a dark glass UI. Users log income and expenses with emotional check-ins, set savings goals, join leagues, and get insights on spending patterns. Built with Expo 54, Firebase, and PostHog — global-ready with USD pricing and a premium tier."
+  },
+  {
+    name: "UMUKINO",
+    desc: "Real-time multiplayer Monopoly-style board game for Rwanda — paid lobbies, live chat, and mobile money wallets.",
+    category: "Web Apps",
+    tags: ["Next.js", "NestJS", "Socket.io", "Docker"],
+    image: "monopoly.png",
+    details: "A real-money gaming platform with a 40-space Rwanda-themed board and full Monopoly rules — trading, auctions, jail, bankruptcy. Microservices stack: NestJS gateways, WebSocket game engine, wallet service (MTN MoMo / Airtel / USDT), rooms, leaderboards, PostgreSQL, Redis, and MongoDB via Docker Compose."
+  },
+  {
     name: "TalentIQ",
     desc: "AI-Powered Talent Screening platform. Evaluates candidates with transparent AI scoring, auditable rankings, and human-centered review workflows.",
     category: "Web Apps",
@@ -72,7 +96,7 @@ const allEas = [
       winrate:"94.13%"
     },
     image: "HFT_pro.png",
-    isLive: true,
+    isLive: false,
     details: "A professional-grade high-frequency trading algorithm meticulously engineered for low-latency execution on major currency pairs. It utilizes a sophisticated scalp setup logic that capitalizes on michrough dynamic stop-loss adjustments. Optimized for ECN environments, it minimizes slippage and maximizes execution speed."
   },
   {

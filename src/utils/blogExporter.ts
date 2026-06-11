@@ -1,9 +1,12 @@
 // Utility to export blogs from localStorage to JSON format
 // Run this in browser console when you want to save your blogs
 
+import blogsData from "@/data/blogs.json";
+
 export const exportBlogsToJSON = () => {
   const savedPosts = JSON.parse(localStorage.getItem('blogPosts') || '{}');
-  const jsonString = JSON.stringify(savedPosts, null, 2);
+  const merged = { ...blogsData, ...savedPosts };
+  const jsonString = JSON.stringify(merged, null, 2);
   
   // Create downloadable file
   const blob = new Blob([jsonString], { type: 'application/json' });
